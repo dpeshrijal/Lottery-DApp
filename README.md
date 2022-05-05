@@ -1,15 +1,7 @@
-# Basic Sample Hardhat Project
+# ToDo List Dapp
+A Lottery Dapp powered by Ethereum Smart Contracts.
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
-
-Try running some of the following tasks:
-
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
+# Built With
+* **Solidity**: Language used to write Smart Contracts
+* **Hardhat**: Development framework for Ethereum Dapps
+* **ethers.js**: Library that allows smart contract to interact with blockchain
