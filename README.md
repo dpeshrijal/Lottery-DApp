@@ -1,4 +1,4 @@
-# ToDo List Dapp
+# Lottery Dapp
 A Lottery Dapp powered by Ethereum Smart Contracts.
 
 # Built With
