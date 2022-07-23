@@ -1,12 +1,12 @@
 //SPDX-License-Identifier:MIT
 
-import "hardhat/console.sol";
 pragma solidity ^0.8.0;
 
 contract Lottery {
     address public owner;
     address payable[] public players;
     uint256 public lotteryId;
+    address public winner;
     mapping(uint256 => address payable) public lotteryHistory;
 
     constructor() {
@@ -32,15 +32,18 @@ contract Lottery {
         return uint256(keccak256(abi.encodePacked(owner, block.timestamp)));
     }
 
-    function pickWinner() public onlyOwner {
+    function pickWinner() public onlyOwner returns (address) {
         uint256 index = getRandomNumber() % players.length;
         players[index].transfer(address(this).balance);
-        console.log("And the winner is", players[index]);
 
         lotteryHistory[lotteryId] = players[index];
+        winner = players[index];
+
         lotteryId++;
 
         players = new address payable[](0);
+
+        return winner;
     }
 
     modifier onlyOwner() {

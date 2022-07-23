@@ -28,13 +28,15 @@ const main = async () => {
     console.log("Participant added");
 
     contractBalance = await lotteryContract.getBalance();
-    console.log("Lottery balance is: ", contractBalance);
+    console.log("Lottery balance is: ", contractBalance.toString());
 
     let players = await lotteryContract.getPlayers();
     console.log("Players of this lottery are: ", players);
 
     let pickWinner = await lotteryContract.pickWinner();
     await pickWinner.wait();
+
+    console.log("Winner is: ", pickWinner);
 
 }
 
