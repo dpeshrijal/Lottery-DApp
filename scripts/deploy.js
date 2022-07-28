@@ -1,7 +1,7 @@
 
 const main = async () => {
     const getContractFactory = await hre.ethers.getContractFactory("Lottery");
-    const lotteryContract = await getContractFactory.deploy();
+    const lotteryContract = await getContractFactory.deploy(9073);
     await lotteryContract.deployed();
 
     console.log("Lottery Smart Contract address is: ", lotteryContract.address);
